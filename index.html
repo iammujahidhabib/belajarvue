@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="contrainer" id="tes">
+		<input type="text" class="form-control" v-model="inputan">
+		<label> </label>
+		<p> Output : {{ inputan }}</p>
+	</div>
+	<script type="text/javascript" src="https://unpkg.com/vue@2.5.6/dist/vue.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+<script type="text/javascript">
+	var app= new Vue({
+		el:"#tes",
+		data: {
+			inputan:''
+		}
+	})
+</script>
+
+</body>
+</html>

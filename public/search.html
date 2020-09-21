@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="contrainer" id="tes" style="width: 50%;padding: 10% ">
+		<input type="text" class="form-control" v-model="inputan">
+		<label> </label>
+		<p> Output : {{ inputan }}</p>{{ counter }}
+		<button v-on:click="reverse">Reverse</button>
+		<button v-on:dbclick="redo">Undo/Redo</button>
+	</div>
+	<!-- <script type="text/javascript" src="https://unpkg.com/vue@2.5.6/dist/vue.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript">
+	var app= new Vue({
+		el:"#tes",
+		data: {
+			inputan:'',
+			counter:0
+		},
+		methods: {
+			reverse: function () {
+				this.inputan = this.inputan.split('').reverse().join('')
+			},
+			redo: function () {
+				console.log('ine');
+			},
+			undo: function() {
+				this.counter++;
+				this.timer=setTimeout(function() {
+					var self=this;
+					// switch(this.counter){
+					// 	case 1:
+					// 		console.log('satu');
+					// 		break;
+					// 	case 2:
+					// 		console.log('satu');
+					// 		break;
+					// }
+					// this.numClicks = 0; 
+				if (self.counter ===1) {
+					console.log('satu');
+				}else{
+					console.log('dua');
+				}
+
+			},100);
+				clearTimeout(this.timer);
+					self.counter = 0; 
+				// console.log('cek');
+		      // if (this.canUndo) {
+		      //   this.historyIndex -= 1
+		      //   this.todos = this.history[this.historyIndex]
+		      // }
+		    },
+		}
+	})
+</script>
+
+</body>
+</html>

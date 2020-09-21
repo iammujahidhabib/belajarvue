@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  
+<div id="app">
+   
+	<input type="text" class="form-control" v-model="number">
+  <p>String : {{ number }}</p>
+  <p>Array : {{myResult}}</p>
+  <div v-for="item of hasilSplice">
+  	{{ hasilSplice }}
+  </div>
+  <!-- <p>Array : {{hasilSplice}}</p> -->
+  <!-- <p>Array : {{myResult.splice}}</p> -->
+  <!-- <div v-for="clickFunction in clickFunction"></div> -->
+  <button v-on:click="clickFunction()">Click Me</button>
+   
+</div>
+  
+<script type="text/javascript">
+   
+    var app = new Vue({
+      el: '#app',
+      data: {
+        number: "" ,
+        myResult: '',
+        hasilSplice:''
+      },
+      methods:{
+        clickFunction: function () {   
+            this.myResult = this.number.split(" ");
+            // this.hasilSplice=this.myResult.sort();
+   //          for(var i = 0; i < this.myResult.length; i++){
+			// this.hasilSplice=this.sort(this.myResult);  
+			//   // this.hasilSplice += " " + this.myResult[i];  
+  	// 		  console.log(this.hasilSplice); 
+			// }
+			this.sorting(this.myResult);
+			// if (this.myResult.sort() == ) {}
+        },
+        swap: function(arr,a, b){  
+		   var temp;  
+		   temp = arr[a];  
+		   arr[a] = arr[b];  
+		   arr[b] = temp;  
+		},
+		sorting: function(array){  
+			 for(var j = 0; j< array.length-1; j++){  
+			     for(var k = 1; k< array.length; k++){  
+			       if(array[k] < array[k - 1]){  
+			        this.hasilSplice =this.swap(array,k,k-1);
+			        // console.log(this.swap(array,k,k-1));  //call the Swap function here  
+			       }  
+			     }  
+			 }  
+		},
+      }
+    })
+</script>
+   
+</body>
+</html>
